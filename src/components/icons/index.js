@@ -1,0 +1,10 @@
+export { IconExternal } from './External';
+export { IconFacebook } from './Facebook';
+export { IconFork } from './Fork';
+export { Icon } from './Icon';
+export { IconGitHub } from './Github';
+export { IconInstagram } from './Instagram';
+export { IconLinkedin } from './Linkedin';
+export { IconLogo } from './Logo';
+export { IconStar } from './Star';
+export { IconTwitter } from './Twitter';
