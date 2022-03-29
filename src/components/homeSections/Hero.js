@@ -64,7 +64,7 @@ const Hero = () => {
       style={{ borderRadius: '50%' }}
     />
   );
-  const name = <h1 className="heading">Daniele Serfilippi</h1>;
+  const name = <h1 className="main-heading">Daniele Serfilippi</h1>;
   const tagline = <h2 className="tagline">Senior Software Engineer &amp; Architect</h2>;
   const social = <Social />;
 
