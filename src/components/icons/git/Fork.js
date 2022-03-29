@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IconFork = () => (
+const Fork = () => (
   <svg
     viewBox="0 0 24 24"
     fill="none"
@@ -18,4 +18,4 @@ const IconFork = () => (
   </svg>
 );
 
-export { IconFork };
+export { Fork };

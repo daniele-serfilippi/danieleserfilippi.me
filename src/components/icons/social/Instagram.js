@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IconInstagram = () => (
+const Instagram = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     role="img"
@@ -19,4 +19,4 @@ const IconInstagram = () => (
   </svg>
 );
 
-export { IconInstagram };
+export { Instagram };

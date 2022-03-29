@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IconExternal = () => (
+const External = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     role="img"
@@ -19,4 +19,4 @@ const IconExternal = () => (
   </svg>
 );
 
-export { IconExternal };
+export { External };

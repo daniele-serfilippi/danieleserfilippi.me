@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IconStar = () => (
+const Star = () => (
   <svg
     viewBox="0 0 24 24"
     fill="none"
@@ -15,4 +15,4 @@ const IconStar = () => (
   </svg>
 );
 
-export { IconStar };
+export { Star };
