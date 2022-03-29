@@ -168,7 +168,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.1;
   }
 
-  .heading {
+  .main-heading {
     margin: 0 0 20px 0;
     font-size: clamp(40px, 8vw, 80px);
   }
@@ -186,7 +186,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: clamp(40px, 8vw, 60px);
   }
 
-  .numbered-heading {
+  .heading {
     display: flex;
     align-items: center;
     position: relative;

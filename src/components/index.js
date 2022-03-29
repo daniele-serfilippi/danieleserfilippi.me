@@ -6,4 +6,3 @@ export { Social } from './Social';
 export { Email } from './Email';
 export { TopBottomEllipses } from './TopBottomEllipses';
 export { Footer } from './Footer';
-export { Hero } from './sections/Hero';
