@@ -16,6 +16,23 @@ const StyledSkillsSection = styled.section`
     @media (max-width: 768px) {
       display: block;
     }
+
+    .tech-container {
+      padding: 16px;
+      text-align: center;
+
+      svg,
+      img {
+        width: 64px;
+        height: 64px;
+      }
+
+      p {
+        font-weight: 300;
+        font-size: var(--fz-sm);
+        margin-top: 10px;
+      }
+    }
   }
 `;
 const StyledText = styled.div``;
@@ -32,7 +49,7 @@ const Skills = () => {
     scrollReveal.reveal(revealContainer.current, scrollRevealConfig());
   }, []);
 
-  const skills = ['JavaScript', 'TypeScript', 'React', 'NodeJs'];
+  const techs = ['JavaScript', 'TypeScript', 'React', 'NodeJS'];
 
   return (
     <StyledSkillsSection id="skills" ref={revealContainer}>
@@ -46,13 +63,14 @@ const Skills = () => {
             <p>Something else about me...</p>
 
             <p>Something else about me...</p>
-
-            <p>Here are a few technologies I’ve been working with recently:</p>
           </div>
 
-          <div className="skills-list">
-            {skills.map((skill, i) => (
-              <Icon name={skill} key={i} />
+          <div className="tech-list">
+            {techs.map((tech, i) => (
+              <div className="tech-container">
+                <Icon name={tech} key={i} />
+                <p>{tech}</p>
+              </div>
             ))}
           </div>
         </StyledText>

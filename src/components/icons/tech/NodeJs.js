@@ -1,7 +1,7 @@
 import React from 'react';
 
 // https://devicon.dev/
-const JavaScript = () => (
+const NodeJs = () => (
   <svg viewBox="0 0 128 128">
     <path
       fill="#83CD29"
@@ -10,4 +10,4 @@ const JavaScript = () => (
   </svg>
 );
 
-export { JavaScript };
+export { NodeJs };
