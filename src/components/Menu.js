@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Helmet } from 'react-helmet';
-import { Link } from 'gatsby';
+import Head from 'next/head';
+import Link from 'next/link';
 import styled from 'styled-components';
-import { navLinks } from '@config';
+import { config } from '@config';
 import { KEY_CODES } from '@utils';
 import { useOnClickOutside } from '@hooks';
+
+const { navLinks } = config;
 
 const StyledMenu = styled.div`
   display: none;
@@ -235,9 +237,9 @@ const Menu = () => {
 
   return (
     <StyledMenu>
-      <Helmet>
+      <Head>
         <body className={menuOpen ? 'blur' : ''} />
-      </Helmet>
+      </Head>
 
       <div ref={wrapperRef}>
         <StyledHamburgerButton
@@ -257,8 +259,8 @@ const Menu = () => {
               <ol>
                 {navLinks.map(({ url, name }, i) => (
                   <li key={i}>
-                    <Link to={url} onClick={() => setMenuOpen(false)}>
-                      {name}
+                    <Link href={url}>
+                      <a onClick={() => setMenuOpen(false)}>{name}</a>
                     </Link>
                   </li>
                 ))}

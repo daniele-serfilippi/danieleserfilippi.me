@@ -1,30 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import { useLocation } from '@reach/router';
-import { useStaticQuery, graphql } from 'gatsby';
+import NextHead from 'next/head';
+import { useRouter } from 'next/router';
+import { config } from '@config';
 
 const Head = ({ title, description, image }) => {
-  const { pathname } = useLocation();
-
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            defaultTitle: title
-            defaultDescription: description
-            siteUrl
-            defaultImage: image
-            twitterUsername
-          }
-        }
-      }
-    `,
-  );
+  const { pathname } = useRouter();
 
   const { defaultTitle, defaultDescription, siteUrl, defaultImage, twitterUsername } =
-    site.siteMetadata;
+    config.siteMetadata;
 
   const seo = {
     title: title || defaultTitle,
@@ -34,8 +18,10 @@ const Head = ({ title, description, image }) => {
   };
 
   return (
-    <Helmet title={title} defaultTitle={seo.title} titleTemplate={`%s | ${defaultTitle}`}>
+    <NextHead>
       <html lang="en" />
+
+      <title>{`${seo.title}`}</title>
 
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
@@ -51,12 +37,7 @@ const Head = ({ title, description, image }) => {
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content={seo.image} />
-
-      <meta name="google-site-verification" content="" />
-
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-    </Helmet>
+    </NextHead>
   );
 };
 

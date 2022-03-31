@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { socialMedia } from '@config';
+import { config } from '@config';
 import { Icon } from '@components/icons';
+
+const { socialMedia } = config;
 
 const StyledSocialList = styled.ul`
   display: flex;

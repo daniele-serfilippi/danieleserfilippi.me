@@ -5,13 +5,15 @@
       "jsx": "react",
       "paths": {
         "@components/*": ["./components/*"],
-        "@config": ["./config"],
-        "@fonts": ["./fonts"],
+        "@components": ["./components"],
+        "@config": ["../config"],
+        "@fonts/*": ["./fonts/*"],
         "@hooks": ["./hooks"],
-        "@images": ["./images"],
+        "@images/*": ["./images/*"],
         "@pages": ["./pages"],
         "@styles": ["./styles"],
         "@utils/*": ["./utils/*"],
+        "@utils": ["./utils"],
       }
     }
   }

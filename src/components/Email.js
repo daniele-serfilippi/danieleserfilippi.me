@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { email } from '@config';
+import { config } from '@config';
+
+const { email } = config;
 
 const StyledLinkWrapper = styled.div`
   display: flex;

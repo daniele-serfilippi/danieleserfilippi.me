@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { scrollRevealConfig } from '@config';
-import { scrollReveal } from '@utils/scrollReveal';
+import { config } from '@config';
+// import { scrollReveal } from '@utils/scrollReveal';
 import { usePrefersReducedMotion } from '@hooks';
 import { Icon } from '@components/icons';
+
+// const { scrollRevealConfig } = config;
 
 const StyledSkillsSection = styled.section`
   max-width: 900px;
@@ -46,7 +48,7 @@ const Skills = () => {
       return;
     }
 
-    scrollReveal.reveal(revealContainer.current, scrollRevealConfig());
+    // scrollReveal.reveal(revealContainer.current, scrollRevealConfig());
   }, []);
 
   const techs = ['JavaScript', 'TypeScript', 'React', 'NodeJS'];

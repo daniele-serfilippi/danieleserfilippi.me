@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled, { css } from 'styled-components';
-import { navLinks } from '@config';
+import { config } from '@config';
 import { loaderDelay } from '@utils';
 import { useScrollDirection, usePrefersReducedMotion } from '@hooks';
 import { Menu } from '@components';
 import { Logo as IconLogo } from '@components/icons';
+
+const { navLinks } = config;
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -143,8 +145,10 @@ const Nav = ({ isHome }) => {
           <IconLogo />
         </a>
       ) : (
-        <Link to="/" aria-label="home">
-          <IconLogo />
+        <Link href="/" aria-label="home">
+          <a>
+            <IconLogo />
+          </a>
         </Link>
       )}
     </div>
@@ -173,7 +177,9 @@ const Nav = ({ isHome }) => {
                 {navLinks &&
                   navLinks.map(({ url, name }, i) => (
                     <li key={i}>
-                      <Link to={url}>{name}</Link>
+                      <Link href={url}>
+                        <a>{name}</a>
+                      </Link>
                     </li>
                   ))}
               </ol>
@@ -200,7 +206,9 @@ const Nav = ({ isHome }) => {
                     navLinks.map(({ url, name }, i) => (
                       <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
                         <li key={i} style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
-                          <Link to={url}>{name}</Link>
+                          <Link href={url}>
+                            <a>{name}</a>
+                          </Link>
                         </li>
                       </CSSTransition>
                     ))}

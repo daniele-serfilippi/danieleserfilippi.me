@@ -1,22 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { Layout } from '@components';
 import { Hero, Skills } from '@components/homeSections';
+import { useRouter } from 'next/router';
 
-const StyledMainContainer = styled.main``;
+const IndexPage = () => {
+  const location = useRouter();
 
-const IndexPage = ({ location }) => (
-  <Layout location={location}>
-    <StyledMainContainer className="fillHeight">
-      <Hero />
-      <Skills />
-    </StyledMainContainer>
-  </Layout>
-);
-
-IndexPage.propTypes = {
-  location: PropTypes.object.isRequired,
+  return (
+    <Layout location={location}>
+      <main className="fillHeight">
+        <Hero />
+        <Skills />
+      </main>
+    </Layout>
+  );
 };
 
 export default IndexPage;

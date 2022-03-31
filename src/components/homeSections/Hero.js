@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import Image from 'next/image';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 import { Social } from '@components/Social';
+
+import profilePic from '@images/me.jpg';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -54,14 +56,15 @@ const Hero = () => {
   }, []);
 
   const picture = (
-    <StaticImage
+    <Image
       className="img"
-      src="../../images/me.jpg"
+      src={profilePic}
       width={200}
-      heigth={200}
+      height={200}
       quality={100}
       alt="Daniele Serfilippi"
       style={{ borderRadius: '50%' }}
+      placeholder="blur"
     />
   );
   const name = <h1 className="main-heading">Daniele Serfilippi</h1>;
