@@ -142,30 +142,6 @@ const mixins = {
       box-shadow: 0 20px 30px -15px var(--navy-shadow);
     }
   `,
-
-  fancyList: css`
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    font-size: var(--fz-lg);
-    li {
-      position: relative;
-      padding-left: 30px;
-      margin-bottom: 10px;
-      &:before {
-        content: '▹';
-        position: absolute;
-        left: 0;
-        color: var(--yellow);
-      }
-    }
-  `,
-
-  resetList: css`
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  `,
 };
 
 export { mixins };

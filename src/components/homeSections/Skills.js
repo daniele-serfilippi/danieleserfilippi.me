@@ -69,7 +69,7 @@ const Skills = () => {
 
           <div className="tech-list">
             {techs.map((tech, i) => (
-              <div className="tech-container">
+              <div className="tech-container" key={i}>
                 <Icon name={tech} key={i} />
                 <p>{tech}</p>
               </div>

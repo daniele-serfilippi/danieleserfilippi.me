@@ -255,17 +255,17 @@ const Menu = () => {
 
         <StyledSidebar menuOpen={menuOpen} aria-hidden={!menuOpen} tabIndex={menuOpen ? 1 : -1}>
           <nav ref={navRef}>
-            {navLinks && (
-              <ol>
-                {navLinks.map(({ url, name }, i) => (
-                  <li key={i}>
-                    <Link href={url}>
-                      <a onClick={() => setMenuOpen(false)}>{name}</a>
-                    </Link>
-                  </li>
-                ))}
-              </ol>
-            )}
+            <ol>
+              {navLinks
+                ? navLinks.map(({ url, name }, i) => (
+                    <li key={i}>
+                      <Link href={url}>
+                        <a onClick={() => setMenuOpen(false)}>{name}</a>
+                      </Link>
+                    </li>
+                  ))
+                : null}
+            </ol>
 
             <a
               href="https://drive.google.com/file/d/1PJRwqPwg1S3M0eOUj5QzXCGS-oUhWdtN/view?usp=sharing"

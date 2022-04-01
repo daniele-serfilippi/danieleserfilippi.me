@@ -25,7 +25,7 @@
 3. Start the development server
 
    ```sh
-   npm start
+   npm run dev
    ```
 
 ## 🚀 Production Set Up

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { navDelay } from '@utils';
 import { Layout } from '@components';
@@ -27,9 +27,10 @@ const StyledHomeButton = styled(Link)`
   margin-top: 40px;
 `;
 
-const NotFoundPage = ({ location }) => {
+const NotFoundPage = () => {
   const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const location = useRouter();
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -44,7 +45,7 @@ const NotFoundPage = ({ location }) => {
     <StyledMainContainer className="fillHeight">
       <StyledTitle>404</StyledTitle>
       <StyledSubtitle>Page Not Found</StyledSubtitle>
-      <StyledHomeButton to="/">Go Home</StyledHomeButton>
+      <StyledHomeButton href="/">Go Home</StyledHomeButton>
     </StyledMainContainer>
   );
 
@@ -67,10 +68,6 @@ const NotFoundPage = ({ location }) => {
       )}
     </Layout>
   );
-};
-
-NotFoundPage.propTypes = {
-  location: PropTypes.object.isRequired,
 };
 
 export default NotFoundPage;
