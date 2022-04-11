@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Star = () => (
   <svg
     viewBox="0 0 24 24"

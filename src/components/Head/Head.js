@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import NextHead from 'next/head';
 import { useRouter } from 'next/router';
@@ -7,20 +6,23 @@ import { config } from '@config';
 const Head = ({ title, description, image }) => {
   const { pathname } = useRouter();
 
-  const { defaultTitle, defaultDescription, siteUrl, defaultImage, twitterUsername } =
-    config.siteMetadata;
+  const {
+    title: defaultTitle,
+    description: defaultDescription,
+    siteUrl,
+    image: defaultImage,
+    twitterUsername,
+  } = config.siteMetadata;
 
   const seo = {
-    title: title || defaultTitle,
-    description: description || defaultDescription,
-    image: `${siteUrl}${image || defaultImage}`,
+    title: title ?? defaultTitle,
+    description: description ?? defaultDescription,
+    image: `${siteUrl}${image ?? defaultImage}`,
     url: `${siteUrl}${pathname}`,
   };
 
   return (
     <NextHead>
-      <html lang="en" />
-
       <title>{`${seo.title}`}</title>
 
       <meta name="description" content={seo.description} />

@@ -1,0 +1,23 @@
+$xOffset: 750px;
+$yOffset: 650px;
+$width: 1500px;
+$height: 800px;
+
+.ellipse {
+  position: fixed;
+  z-index: -1;
+  background-color: var(--lightest-navy);
+  border-radius: 50%;
+  height: $height;
+  width: $width;
+}
+
+.ellipse.top {
+  top: -$yOffset;
+  left: -$xOffset;
+}
+
+.ellipse.bottom {
+  bottom: -$yOffset;
+  right: -$xOffset;
+}

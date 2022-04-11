@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://danieleserfilippi.me/sitemap/sitemap-0.xml
+Sitemap: https://danieleserfilippi.me/sitemap.xml
 Host: https://danieleserfilippi.me

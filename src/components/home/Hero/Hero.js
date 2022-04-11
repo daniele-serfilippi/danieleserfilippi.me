@@ -1,46 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 import { Social } from '@components/Social';
+import styles from './Hero.module.scss';
 
 import profilePic from '@images/me.jpg';
-
-const StyledHeroSection = styled.section`
-  ${({ theme }) => theme.mixins.flexCenter};
-  flex-direction: column;
-  text-align: center;
-  min-height: 100vh;
-  padding: 0;
-
-  @media (max-width: 480px) and (min-height: 700px) {
-    padding: 10vh 0;
-  }
-
-  h1 {
-    margin-top: 40px;
-    color: var(--white);
-    font-weight: 400;
-  }
-
-  h2 {
-    color: var(--slate);
-    line-height: 0.9;
-    margin-bottom: 5vh;
-  }
-
-  p {
-    margin: 20px 0 0;
-    max-width: 540px;
-  }
-
-  .email-link {
-    ${({ theme }) => theme.mixins.bigButton};
-    margin-top: 50px;
-  }
-`;
 
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -74,7 +40,7 @@ const Hero = () => {
   const items = [picture, name, tagline, social];
 
   return (
-    <StyledHeroSection>
+    <section className={`${styles.hero} flex-center`}>
       {prefersReducedMotion ? (
         <>
           {items.map((item, i) => (
@@ -91,7 +57,7 @@ const Hero = () => {
             ))}
         </TransitionGroup>
       )}
-    </StyledHeroSection>
+    </section>
   );
 };
 

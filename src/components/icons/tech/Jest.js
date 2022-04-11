@@ -1,5 +1,3 @@
-import React from 'react';
-
 // https://devicon.dev/
 const Jest = () => (
   <svg viewBox="0 0 128 128">

@@ -1,10 +1,4 @@
-import React from 'react';
-import styled from 'styled-components';
-import { config } from '@config';
-
-const { email } = config;
-
-const StyledLinkWrapper = styled.div`
+.email {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,12 +27,4 @@ const StyledLinkWrapper = styled.div`
       transform: translateY(-3px);
     }
   }
-`;
-
-const Email = () => (
-  <StyledLinkWrapper>
-    <a href={`mailto:${email}`}>{email}</a>
-  </StyledLinkWrapper>
-);
-
-export { Email };
+}

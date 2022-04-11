@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
-import { navDelay } from '@utils';
 import { Layout } from '@components';
+import { navDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledMainContainer = styled.main`
-  ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
 `;
 const StyledTitle = styled.h1`
@@ -23,14 +21,12 @@ const StyledSubtitle = styled.h2`
   font-weight: 400;
 `;
 const StyledHomeButton = styled(Link)`
-  ${({ theme }) => theme.mixins.bigButton};
   margin-top: 40px;
 `;
 
 const NotFoundPage = () => {
   const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
-  const location = useRouter();
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -42,15 +38,17 @@ const NotFoundPage = () => {
   }, []);
 
   const content = (
-    <StyledMainContainer className="fillHeight">
+    <StyledMainContainer className="fillHeight flex-center">
       <StyledTitle>404</StyledTitle>
       <StyledSubtitle>Page Not Found</StyledSubtitle>
-      <StyledHomeButton href="/">Go Home</StyledHomeButton>
+      <StyledHomeButton href="/">
+        <a className="big-button">Go Home</a>
+      </StyledHomeButton>
     </StyledMainContainer>
   );
 
   return (
-    <Layout location={location}>
+    <Layout>
       <Head>
         <title>Page Not Found</title>
       </Head>

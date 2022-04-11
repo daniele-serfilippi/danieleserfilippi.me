@@ -1,18 +1,8 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import styled, { ThemeProvider } from 'styled-components';
+import { useEffect } from 'react';
 import { Head, Nav, Footer, TopBottomEllipses } from '@components';
-import { GlobalStyle, theme } from '@styles';
+import styles from './Layout.module.scss';
 
-const StyledContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-`;
-
-const Layout = ({ children, location }) => {
-  const isHome = location.pathname === '/';
-
+const Layout = ({ children, home = false }) => {
   // Sets target="_blank" rel="noopener noreferrer" on external links
   const handleExternalLinks = () => {
     const allLinks = Array.from(document.querySelectorAll('a'));
@@ -46,30 +36,17 @@ const Layout = ({ children, location }) => {
       <Head />
 
       <div id="root">
-        <ThemeProvider theme={theme}>
-          <GlobalStyle />
-
-          <a className="skip-to-content" href="#content">
-            Skip to Content
-          </a>
-
-          <StyledContent>
-            <TopBottomEllipses />
-            <Nav isHome={isHome} />
-            <div id="content">
-              {children}
-              <Footer />
-            </div>
-          </StyledContent>
-        </ThemeProvider>
+        <div className={styles.container}>
+          <TopBottomEllipses />
+          <Nav isHome={home} />
+          <div id="content">
+            {children}
+            <Footer />
+          </div>
+        </div>
       </div>
     </>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-  location: PropTypes.object.isRequired,
 };
 
 export { Layout };

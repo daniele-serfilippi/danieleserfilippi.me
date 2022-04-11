@@ -1,0 +1,30 @@
+.skills {
+  max-width: 900px;
+
+  .inner {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 50px;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+
+    .tech-container {
+      padding: 16px;
+      text-align: center;
+
+      svg,
+      img {
+        width: 64px;
+        height: 64px;
+      }
+
+      p {
+        font-weight: 300;
+        font-size: var(--fz-sm);
+        margin-top: 10px;
+      }
+    }
+  }
+}
